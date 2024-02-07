@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<img th:each="champ : ${chName}" th:src="@{'https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/'+ ${champ.champion_name} +'.png'}" alt="초상화">
+	<ul>
+		<!-- Thymeleaf 문법을 사용하여 리스트를 순회하고 출력 -->
+		<li th:each="champ : ${chName}" th:text="${champ.champion_name}"></li>
+	</ul>
+	
+	<div class="image-container">
+		<img th:each="champ : ${chName}"
+			th:src="@{'https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/'+ ${champ.champion_name} +'.png'}"
+			class="image-item">
+	</div>
+</body>
+</html>
