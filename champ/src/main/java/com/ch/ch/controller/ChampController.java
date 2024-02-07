@@ -27,7 +27,7 @@ public class ChampController {
 		return "index";
 	}
 
-	@PostMapping("/champions")
+	@PostMapping("/detail")
 	public String getChName(@RequestParam("chName") String chName, Model model) {
 		model.addAttribute("chName", chName);
 		return "detail";
