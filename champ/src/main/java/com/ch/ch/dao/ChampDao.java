@@ -10,7 +10,7 @@ import com.ch.ch.dto.ChampDto;
 @Mapper
 public interface ChampDao {
 
-	@Select("select champion_name from champlist")
-	public List<ChampDto> getChName();
+	@Select("select champion_name from list")
+	public List<ChampDto> chName();
 
 }

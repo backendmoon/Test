@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-	<form action="/detail" method="post">
-		<input type="text" placeholder="챔피언 이름" id="chName" name="chName">
-		<button type="submit">챔피언 검색</button>
-	</form>
+<!-- 	<img th:src="@{'https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/' + ${chName} + '.png'}"> -->
+<!-- 	<img src="'https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/' + ${chName} + '.png'"> -->
+    <ul>
+        <li th:each="champ : ${chName}">
+        <img th:src="@{'https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/' + ${champ.champion_name} + '.png'}" alt="초상화">
+        <span>가렌</span>
+        </li>
+    </ul>
+<!-- 	<form action="/detail" method="post"> -->
+<!-- 		<input type="text" placeholder="챔피언 이름" id="chName" name="chName"> -->
+<!-- 		<button type="submit">챔피언 검색</button> -->
+<!-- 	</form> -->
 </body>
 </html>

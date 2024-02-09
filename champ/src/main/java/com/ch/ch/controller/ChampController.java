@@ -23,7 +23,9 @@ public class ChampController {
 	public ChampService cSer;
 
 	@GetMapping("/")
-	public String home() {
+	public String home(Model model) {
+		List<ChampDto> chName = cSer.getChName();
+		model.addAttribute("chName", chName);
 		return "index";
 	}
 

@@ -15,7 +15,7 @@ public class ChampService {
 	public ChampDao cDao;
 
 	public List<ChampDto> getChName() {
-		return cDao.getChName();
+		return cDao.chName();
 	}
 
 }
