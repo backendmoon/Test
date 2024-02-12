@@ -7,12 +7,11 @@
 <script src="/js/jquery-3.7.0.min.js"></script>
 </head>
 <body>
-    <h1>나는 헤더</h1>
-    <h1>나는 검색창</h1>
-    <div class="center">
-        <div>
+    <div class="bd">
+        <header>나는 헤더</header>
+        <nav>나는 검색창</nav>
+        <header>
             <label>티어</label>
-            <!-- 드롭다운을 만드는 select 요소 -->
             <select>
                 <option value="diamond">diamond</option>
                 <option value="platinum">platinum</option>
@@ -20,92 +19,106 @@
                 <option value="silver">silver</option>
                 <option value="bronze">bronze</option>
             </select>
-            <span class="ccnter">헤더자리(카운터, 아이템, 스킬, 룬)</span>
+            <span>
+                <a th:href="@{/counter}">카운터</a>
+                <a th:href="@{/rune}">룬</a>
+                <a th:href="@{/item}">아이템</a>
+                <a th:href="@{/skill}">스킬</a>
+            </span>
+        </header>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div>
+                <!-- <img th:src="|https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/${chName}.png|" alt="초상화"> -->
+                <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Garen.png">
+            </div>
+            <div>스킬 설명 및 영상</div>
         </div>
-        <div class="container">
-            <div class="box">
-                <div><img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Garen.png">
-                </div>
-                <div>스킬 설명 및 영상</div>
+        <div class="tab-container">
+            <div class="tab" onclick="showTab('tab1')">
+                <div>TOP</div>
+                <div>50.5%</div>
             </div>
-            <div class="tab-container">
-                <div class="tab" onclick="showTab('tab1')">
-                    <div>TOP</div>
-                    <div>50.5%</div>
-                </div>
-                <div class="tab" onclick="showTab('tab2')">
-                    <div>JUN</div>
-                    <div>40.5%</div>
-                </div>
-                <div class="tab" onclick="showTab('tab3')">
-                    <div>BOT</div>
-                    <div>30.5%</div>
-                </div>
+            <div class="tab" onclick="showTab('tab2')">
+                <div>JUN</div>
+                <div>40.5%</div>
             </div>
-            <div id="tab1-content" class="tab-content">
-                <div class="flex">
-                    <div class="width33">1아이템빌드</div>
-                    <span class="width33">
-                        <div>승률</div>
-                        <div>00.0%</div>
-                    </span>
-                    <span class="width33">
-                        <div>픽률</div>
-                        <div>00.0%</div>
-                    </span>
-                </div>
-                <div class="flex">
-                    <div class="width-half">카운터
-                        <div>
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Ahri.png">
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
-                        </div>
-                    </div>
-                    <div class="width-half">스펠</div>
-                </div>
+            <div class="tab" onclick="showTab('tab3')">
+                <div>BOT</div>
+                <div>30.5%</div>
             </div>
-
-            <div id="tab2-content" class="tab-content">
-                <div class="flex">
-                    <div class="width33">2아이템빌드</div>
-                    <span class="width33">
-                        <div>승률</div>
-                        <div>00.0%</div>
-                    </span>
-                    <span class="width33">
-                        <div>픽률</div>
-                        <div>00.0%</div>
-                    </span>
-                </div>
-                <div class="flex">
-                    <div class="width-half">카운터</div>
-                    <div class="width-half">스펠</div>
-                </div>
-            </div>
-
-            <div id="tab3-content" class="tab-content">
-                <div class="flex">
-                    <div class="width33">3아이템빌드</div>
-                    <span class="width33">
-                        <div>승률</div>`
-                        <div>00.0%</div>
-                    </span>
-                    <span class="width33">
-                        <div>픽률</div>
-                        <div>00.0%</div>
-                    </span>
-                </div>
-                <div class="flex">
-                    <div class="width-half">카운터
-                        <img class="mini" src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Aatrox.png">
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Aatrox.png">
-                    </div>
-                    <div class="width-half">스펠</div>
-                </div>
-            </div>
-            <div class="box">룬</div>
-
         </div>
+        <!-- 탭 내용 시작 -->
+        <div id="tab1-content" class="tab-content">
+            <div class="tab-flex">
+                <div class="width33">1아이템빌드</div>
+                <span class="width33">
+                    <div>승률</div>
+                    <div>00.0%</div>
+                </span>
+                <span class="width33">
+                    <div>픽률</div>
+                    <div>00.0%</div>
+                </span>
+            </div>
+            <div class="tab-flex">
+                <div class="width-half">카운터
+                    <div>
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Ahri.png">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Amumu.png">
+                    </div>
+                </div>
+                <div class="width-half">스펠</div>
+            </div>
+        </div>
+
+        <div id="tab2-content" class="tab-content">
+            <div class="tab-flex">
+                <div class="width33">2아이템빌드</div>
+                <span class="width33">
+                    <div>승률</div>
+                    <div>00.0%</div>
+                </span>
+                <span class="width33">
+                    <div>픽률</div>
+                    <div>00.0%</div>
+                </span>
+            </div>
+            <div class="tab-flex">
+                <div class="width-half">카운터</div>
+                <div class="width-half">스펠</div>
+            </div>
+        </div>
+
+        <div id="tab3-content" class="tab-content">
+            <div class="tab-flex">
+                <div class="width33">3아이템빌드</div>
+                <span class="width33">
+                    <div>승률</div>
+                    <div>00.0%</div>
+                </span>
+                <span class="width33">
+                    <div>픽률</div>
+                    <div>00.0%</div>
+                </span>
+            </div>
+            <div class="tab-flex">
+                <div class="width-half">카운터
+                    <div>
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Ahri.png">
+                    </div>
+                </div>
+                <div class="width-half">스펠</div>
+            </div>
+        </div>
+        <!-- 탭 내용 끝 -->
+        <div class="box">룬</div>
     </div>
 </body>
 <script>

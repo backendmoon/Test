@@ -1,54 +1,49 @@
-body {
-	/* 	margin-left: 25%; */
-	/* 	margin-right: 25%; */
-	/* 	margin-top: 0; */
-	/* 	margin-bottom: 0; */
-	background-color: #808080;
-	/* 	border: 1px solid #000; */
-}
-
-ul {
-	list-style: none;
+* {
+	margin: 1px;
+	text-align: center;
+	background-color: lightgreen;
+	border: 1px solid black;
 	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-	width: 25%;
-	float: left;
 }
 
-li {
-	width: 25%;
-	/* 4개씩 배치하므로 100% / 4 = 25% */
-	box-sizing: border-box;
+body {
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 img {
-	width: 80px;
-	height: 80px;
+	display: inline-block;
+	width: 50px;
+	/* float: left; */
 }
 
 a {
 	color: black;
-	/* 글자 색상을 검은색으로 지정 */
+	/* 링크의 기본 색깔 */
 	text-decoration: none;
-	/* 밑줄을 제거 */
+	/* 밑줄 제거 */
+	transition: color 0.3s;
+	/* 색깔 변경에 애니메이션 효과를 줍니다. */
+	cursor: pointer;
 }
 
-.center {
-	background-color: #00ff80;
-	height: 1000px;
-	text-align: center;
+/* 마우스를 가져다대면 색깔 변경 */
+a:hover {
+	color: yellow;
+	/* 링크의 색깔을 마우스를 가져다대면 빨간색으로 변경 */
 }
 
 .container {
 	display: flex;
+	width: 1100px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .box {
 	width: 33%;
 	height: 100px;
-	background-color: #ffff00;
 }
 
 .tab-container {
@@ -62,8 +57,6 @@ a {
 .tab {
 	padding: 50px;
 	cursor: pointer;
-	border: 1px solid #ddd;
-	background-color: #f0f0f0;
 	width: 100%;
 	/* 탭의 너비를 100%로 설정하여 부모의 너비에 맞춤 */
 	box-sizing: border-box;
@@ -71,9 +64,6 @@ a {
 
 .tab-content {
 	padding: 10px;
-	border: 1px solid #ddd;
-	/* 	margin-top: 0; */
-	/* 	margin-bottom: 0; */
 	display: none;
 	width: 100%;
 	/* 탭 내용의 너비를 100%로 설정하여 부모의 너비에 맞춤 */
@@ -86,35 +76,18 @@ a {
 	display: block;
 }
 
-.flex {
+/* ==================================건들지 말것====================== */
+.tab-flex {
 	display: flex;
-	padding: 100px;
-	border: 1px solid #000;
-	margin: 1px;
-	/* 	display: flex; */
+	/* padding: 100px; */
 }
 
 .width-half {
-	width: 50%;
+	width: 100%;
 	float: left;
-	border: 1px solid #000;
-	margin: 1px;
 }
 
 .width33 {
-	width: 33%;
+	width: 100%;
 	float: left;
-	border: 1px solid #000;
-	margin: 1px;
-}
-
-.header {
-	background-color: #8080ff;
-	height: 100px;
-	text-align: center;
-}
-
-.item {
-	width: 25%;
-	box-sizing: border-box;
 }
