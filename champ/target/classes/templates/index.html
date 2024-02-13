@@ -5,9 +5,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/detail" method="post">
-		<input type="text" placeholder="챔피언 이름" id="chName" name="chName">
-		<button type="submit">챔피언 검색</button>
-	</form>
+<!-- 	<form action="/detail" method="post"> -->
+<!-- 		<input type="text" placeholder="챔피언 이름" id="chName" name="chName"> -->
+<!-- 		<button type="submit">챔피언 검색</button> -->
+<!-- 	</form> -->
+			<a th:href="@{/detail(chName='Garen')}">
+				<img th:src="@{https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Garen.png}" alt="초상화">
+				<p>가렌</p>
+			</a>
+	<!-- 	다른 html 삽입 -->
+<!-- 	<div th:include="header :: header"></div> -->
 </body>
 </html>

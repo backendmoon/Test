@@ -36,14 +36,15 @@ a:hover {
 
 .container {
 	display: flex;
-	width: 1100px;
+	width: 1800px;
 	margin: 0 auto;
 	text-align: center;
 }
 
-.box {
-	width: 33%;
-	height: 100px;
+.head-container {
+	width: 1800px;
+	margin: 0 auto;
+	/* 중앙 정렬을 위한 마진 설정 */
 }
 
 .tab-container {
@@ -79,15 +80,15 @@ a:hover {
 /* ==================================건들지 말것====================== */
 .tab-flex {
 	display: flex;
+	width: 100%;
 	/* padding: 100px; */
 }
 
-.width-half {
+.divide {
 	width: 100%;
-	float: left;
+	/* float: left; */
 }
 
-.width33 {
-	width: 100%;
-	float: left;
+.double-divide {
+	width: 25%;
 }

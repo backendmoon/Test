@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChampDto {
-
-	String champion_name;
+	public String champion_name;
 
 }
