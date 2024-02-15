@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/chstyle.css">
 <script src="/js/jquery-3.7.0.min.js"></script>
 </head>
 <body>
@@ -38,8 +38,8 @@
         <!-- 탭 메뉴 시작 -->
         <div class="tab-container">
             <div class="tab" onclick="showTab('tab1')">
-                <div>TOP</div>
-                <div>50.5%</div>
+                <div>포지션</div>
+                <div th:text="${pick}"></div>
             </div>
             <div class="tab" onclick="showTab('tab2')">
                 <div>JUN</div>

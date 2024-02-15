@@ -1,0 +1,11 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ch.ch.dao.chDao">
+	<select id="pickrate">
+		SELECT teamPosition,
+		ROUND((COUNT(*) / (SELECT COUNT(*) FROM matchinfo WHERE champion_name = #{championName}) *
+		100), 1) AS pickTop1
+		FROM matchinfo WHERE champion_name = #{championName}
+		GROUP BY teamPosition ORDER BY COUNT(*) DESC LIMIT 1;
+	</select>
+</mapper>

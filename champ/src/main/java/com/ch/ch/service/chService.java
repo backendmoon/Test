@@ -18,6 +18,10 @@ public class chService {
 		return cDao.champions();
 	}
 
+	public List<chDto> pickrate() {
+		return cDao.pickrate();
+	}
+
 //	public boolean pickrate(String chName) {
 //		return cDao.pickrate(chName);
 //	}

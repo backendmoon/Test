@@ -30,6 +30,8 @@ public class chController {
 	@GetMapping("/detail")
 	public String detail(@RequestParam(name = "champion_name") String championName, Model model) {
 		model.addAttribute("championName", championName);
+		List<chDto> pickrate = cSer.pickrate();
+		model.addAttribute("pickrate", pickrate);
 		return "detail";
 	}
 

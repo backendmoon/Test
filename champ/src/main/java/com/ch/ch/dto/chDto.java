@@ -8,14 +8,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class chDto {
-	public String champion_name;
+	private String champion_name;
+	private String teamposition;
+
 	private String matchid;
 	private int gameduration;
 	private String riotidgamename;
 	private String riotidtagline;
 	private int participantid;
 	private String championName;
-	private String teamPosition;
 	private String win;
 	private String win_percentage;
 	private String pick_percentage;
