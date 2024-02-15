@@ -3,17 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/chstyle.css">
 </head>
 <body>
-<!-- 	<form action="/detail" method="post"> -->
-<!-- 		<input type="text" placeholder="챔피언 이름" id="chName" name="chName"> -->
-<!-- 		<button type="submit">챔피언 검색</button> -->
-<!-- 	</form> -->
-			<a th:href="@{/detail(chName='Garen')}">
-				<img th:src="@{https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Garen.png}" alt="초상화">
-				<p>가렌</p>
-			</a>
-	<!-- 	다른 html 삽입 -->
-<!-- 	<div th:include="header :: header"></div> -->
+	<a th:each="champ : ${championName}" th:href="@{/detail(champion_name=${champ.champion_name})}">
+        <img th:src="|https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/${champ.champion_name}.png|" alt="초상화">
+    </a>
 </body>
 </html>

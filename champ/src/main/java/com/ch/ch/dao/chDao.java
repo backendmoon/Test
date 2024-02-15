@@ -5,12 +5,17 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import com.ch.ch.dto.ChampDto;
+import com.ch.ch.dto.chDto;
 
 @Mapper
-public interface ChampDao {
+public interface chDao {
 
 	@Select("select champion_name from champlist")
-	public List<ChampDto> getChName();
+	List<chDto> champions();
 
+//	boolean pickrate(String chName);
+
+//	String winrate(chDto cDto);
+//
+//	String pickrate(chDto cDto);
 }
