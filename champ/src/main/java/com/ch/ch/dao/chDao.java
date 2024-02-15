@@ -13,7 +13,7 @@ public interface chDao {
 	@Select("select champion_name from champlist")
 	List<chDto> champions();
 
-	List<chDto> pickrate();
+	String pickrate(chDto cDto);
 
 //	boolean pickrate(String chName);
 

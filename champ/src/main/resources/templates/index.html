@@ -6,8 +6,10 @@
 <link rel="stylesheet" href="/css/chstyle.css">
 </head>
 <body>
-	<a th:each="champ : ${championName}" th:href="@{/detail(champion_name=${champ.champion_name})}">
+	<form action="/detail" method="post">
+	<a th:each="champ : ${championName}" th:value="${championName}">
         <img th:src="|https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/${champ.champion_name}.png|" alt="초상화">
     </a>
+    </form>
 </body>
 </html>

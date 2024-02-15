@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ch.ch.dto.chDto;
@@ -27,10 +28,10 @@ public class chController {
 		return "index";
 	}
 
-	@GetMapping("/detail")
-	public String detail(@RequestParam(name = "champion_name") String championName, Model model) {
+	@PostMapping("/detail")
+	public String detail(@RequestParam(name = "champion_name") String championName, Model model, chDto cDto) {
 		model.addAttribute("championName", championName);
-		List<chDto> pickrate = cSer.pickrate();
+		String pickrate = cSer.pickrate(cDto);
 		model.addAttribute("pickrate", pickrate);
 		return "detail";
 	}
