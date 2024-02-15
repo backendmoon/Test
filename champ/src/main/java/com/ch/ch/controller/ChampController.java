@@ -24,7 +24,7 @@ public class ChampController {
 
 	@GetMapping("/")
 	public String home() {
-		return "index";
+		return "test";
 	}
 
 	@GetMapping("/detail")
