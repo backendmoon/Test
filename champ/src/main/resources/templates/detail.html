@@ -38,16 +38,23 @@
         <!-- 탭 메뉴 시작 -->
         <div class="tab-container">
             <div class="tab" onclick="showTab('tab1')">
-                <div>포지션</div>
-                <div th:text="${pick}"></div>
+				<div th:each="matchInfo, index : ${linePick}">
+					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 0}">most line1</p>
+					<p th:text="${matchInfo.pickTop3}" th:if="${index.index == 0}">most line pickRate1</p>
+<!--                 	<p th:text="'Hello, ' + ${userName} + '! Welcome to our website.'"></p> -->
+            	</div>
             </div>
             <div class="tab" onclick="showTab('tab2')">
-                <div>JUN</div>
-                <div>40.5%</div>
+				<div th:each="matchInfo, index : ${linePick}">
+					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 1}">most line2</p>
+                	<p th:text="${matchInfo.pickTop3}" th:if="${index.index == 1}">most line pickRate2</p>
+            	</div>
             </div>
             <div class="tab" onclick="showTab('tab3')">
-                <div>BOT</div>
-                <div>30.5%</div>
+				<div th:each="matchInfo, index : ${linePick}">
+					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 2}">most line3</p>
+                	<p th:text="${matchInfo.pickTop3}" th:if="${index.index == 2}">most line pickRate3</p>
+            	</div>
             </div>
         </div>
         <!-- 탭 메뉴 끝 -->

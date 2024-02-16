@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,27 +29,20 @@ public class chController {
 		return "index";
 	}
 
-	@PostMapping("/detail")
-	public String detail(@RequestParam(name = "champion_name") String championName, Model model, chDto cDto) {
-		model.addAttribute("championName", championName);
-		String pickrate = cSer.pickrate(cDto);
-		model.addAttribute("pickrate", pickrate);
-		return "detail";
+	@GetMapping("/detail/{championName}")
+	public String detail(@PathVariable(name = "championName") String championName, Model model, chDto cDto) {
+		List<chDto> linePick = cSer.pw(cDto);
+//		chDto linePick = cSer.pw(cDto);
+		if (linePick != null) {
+			model.addAttribute("linePick", linePick);
+			log.info("@@픽라인 픽률 -> " + linePick);
+//			log.info("@@픽라인 -> " + linePick.getTeamposition());
+//			log.info("@@픽률 -> " + linePick.getPickTop1());
+			return "detail";
+		} else {
+			return "redirect:/";
+		}
 	}
-
-//	@GetMapping("/ch/detail")
-//	public String detail(@RequestParam(name = "champion_name") String chName, Model model, List<chDto> champList) {
-//		boolean champ = cSer.pickrate(chName);
-//		if (champ) {
-//			log.info("====chName", chName);
-//			model.addAttribute("chName", chName);
-//			return "chDetail";
-//		} else {
-//			log.info("====실패", chName);
-//			return "redirect:/ch";
-//		}
-//
-//	}
 
 	@GetMapping("/ch/rune")
 	public String rune() {

@@ -18,8 +18,9 @@ public class chService {
 		return cDao.champions();
 	}
 
-	public String pickrate(chDto cDto) {
-		return cDao.pickrate(cDto);
+	public List<chDto> pw(chDto cDto) {
+//		public chDto pw(chDto cDto) {
+		return cDao.pw(cDto);
 	}
 
 //	public boolean pickrate(String chName) {

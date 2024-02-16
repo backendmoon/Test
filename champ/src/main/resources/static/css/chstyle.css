@@ -36,13 +36,13 @@ a:hover {
 
 .container {
 	display: flex;
-	width: 1800px;
+	width: 1000px;
 	margin: 0 auto;
 	text-align: center;
 }
 
 .head-container {
-	width: 1800px;
+	width: 1000px;
 	margin: 1px auto;
 	/* 중앙 정렬을 위한 마진 설정 */
 }
