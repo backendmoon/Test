@@ -38,7 +38,7 @@
         <!-- 탭 메뉴 시작 -->
         <div class="tab-container">
             <div class="tab" onclick="showTab('tab1')">
-				<div class="p" th:each="matchInfo, index : ${linePick}">
+				<div th:each="matchInfo, index : ${linePick}">
 					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 0}">line1</p>
 					<p th:text="'픽률&#160;' + ${matchInfo.pickTop3}" th:if="${index.index == 0}">pickRate1</p>
             	</div>
