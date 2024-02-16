@@ -31,33 +31,33 @@
         <div>
             <div>
                 <img th:src="|https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/${championName}.png|" alt="초상화">
-                <!--                 <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Garen.png"> -->
+                <!-- VS코드초상화 띄울때 <img src="https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/Garen.png"> -->
             </div>
             <div>스킬 설명 및 영상</div>
         </div>
         <!-- 탭 메뉴 시작 -->
         <div class="tab-container">
             <div class="tab" onclick="showTab('tab1')">
-				<div th:each="matchInfo, index : ${linePick}">
-					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 0}">most line1</p>
-					<p th:text="${matchInfo.pickTop3}" th:if="${index.index == 0}">most line pickRate1</p>
-<!--                 	<p th:text="'Hello, ' + ${userName} + '! Welcome to our website.'"></p> -->
+				<div class="p" th:each="matchInfo, index : ${linePick}">
+					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 0}">line1</p>
+					<p th:text="'픽률&#160;' + ${matchInfo.pickTop3}" th:if="${index.index == 0}">pickRate1</p>
             	</div>
             </div>
             <div class="tab" onclick="showTab('tab2')">
 				<div th:each="matchInfo, index : ${linePick}">
-					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 1}">most line2</p>
-                	<p th:text="${matchInfo.pickTop3}" th:if="${index.index == 1}">most line pickRate2</p>
+					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 1}">line2</p>
+					<p th:text="'픽률&#160;' + ${matchInfo.pickTop3}" th:if="${index.index == 1}">pickRate2</p>
             	</div>
             </div>
             <div class="tab" onclick="showTab('tab3')">
 				<div th:each="matchInfo, index : ${linePick}">
-					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 2}">most line3</p>
-                	<p th:text="${matchInfo.pickTop3}" th:if="${index.index == 2}">most line pickRate3</p>
+					<p th:text="${matchInfo.teamposition}" th:if="${index.index == 2}">line3</p>
+					<p th:text="'픽률&#160;' + ${matchInfo.pickTop3}" th:if="${index.index == 2}">pickRate3</p>
             	</div>
             </div>
         </div>
         <!-- 탭 메뉴 끝 -->
+        
         <!-- 탭 1내용 시작 -->
         <div id="tab1-content" class="tab-content">
             <div class="divide">

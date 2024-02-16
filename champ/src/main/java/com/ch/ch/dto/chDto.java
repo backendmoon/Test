@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 public class chDto {
 	private String champion_name;
 	private String championName;
-	private String pickTop3;
 	private String teamposition;
+	private String pickTop3;
+	private String winTop3;
+	private String banTop3;
 }

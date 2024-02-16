@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ch.ch.dto.chDto;
 import com.ch.ch.service.chService;
@@ -31,13 +29,11 @@ public class chController {
 
 	@GetMapping("/detail/{championName}")
 	public String detail(@PathVariable(name = "championName") String championName, Model model, chDto cDto) {
+		log.info(championName);
 		List<chDto> linePick = cSer.pw(cDto);
-//		chDto linePick = cSer.pw(cDto);
 		if (linePick != null) {
 			model.addAttribute("linePick", linePick);
-			log.info("@@픽라인 픽률 -> " + linePick);
-//			log.info("@@픽라인 -> " + linePick.getTeamposition());
-//			log.info("@@픽률 -> " + linePick.getPickTop1());
+			log.info("@@라인, 픽률 -> " + linePick);
 			return "detail";
 		} else {
 			return "redirect:/";
